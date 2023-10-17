@@ -1,25 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
+import { AppBar, Toolbar} from '@mui/material';
+import { Container } from '@mui/system';
+import React from 'react';
+ 
+import { Route, Routes } from "react-router-dom"
+import Login from './components/Login';
+import MyCard from './components/MyCard';
+//import RegisterForm from './components/Register';
 function App() {
+  // const [modelType, setModelType] = useState<string>('');
+  
+  // function setName(value: string): void {
+  //   setModelType(value);
+  //   console.log(modelType);
+  // }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+    <AppBar><Toolbar  > Form</Toolbar></AppBar>
+    <Container sx={{ p: 10 }}>
+    <Routes>
+     
+      <Route path="/login" element={<Login />} />
+      <Route path="/mycard" element={<MyCard />} />
+      
+    </Routes>
+   
+     
+    </Container>
+    </React.Fragment>
   );
 }
 
